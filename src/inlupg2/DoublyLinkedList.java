@@ -1,7 +1,12 @@
 package inlupg2;
 
-import java.util.ArrayList;
 
+/**
+ * 
+ * @author DennisW
+ *
+ * @param <E>
+ */
 public class DoublyLinkedList<E> {
 	private ObjectNode<E> first = null, last = null;
 
@@ -116,16 +121,6 @@ public class DoublyLinkedList<E> {
 
 	public ObjectNode<E> getLast() {
 		return last;
-	}
-
-	public ArrayList<E> getList() {
-		ObjectNode<E> node = first;
-		ArrayList<E> list = new ArrayList<E>();
-		while (node.getNext() != null) {
-			list.add(node.getData());
-			node = node.getNext();
-		}
-		return list;
 	}
 
 	public String toString() {
