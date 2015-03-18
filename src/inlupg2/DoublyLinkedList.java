@@ -2,14 +2,21 @@ package inlupg2;
 
 
 /**
- * 
+ * DoublyLinkedList handles a list of ObjectNodes that are linked.
+ * The class contains methods for adding, getting and removing 
+ * items from the list.
+ * It also contains some other useful methods such as size and toString.
  * @author DennisW
  *
- * @param <E>
+ * @param <E> the data type to be stored in the nodes.
  */
 public class DoublyLinkedList<E> {
 	private ObjectNode<E> first = null, last = null;
 
+	/**
+	 * Returns the size of the list.
+	 * @return size
+	 */
 	public int size() {
 		ObjectNode<E> temp = first;
 		int count = 0;
@@ -20,6 +27,11 @@ public class DoublyLinkedList<E> {
 		return count;
 	}
 
+	/**
+	 * Returns the object at a specified index.
+	 * @param index the index of the object
+	 * @return ObjectNode at a specified index.
+	 */
 	public ObjectNode<E> get(int index) {
 		if (index > -1 && index < size()) {
 			ObjectNode<E> node = first;
@@ -33,6 +45,11 @@ public class DoublyLinkedList<E> {
 		}
 	}
 
+	/**
+	 * Adds an object to the list at a specified index.
+	 * @param object the object to be added.
+	 * @param index the index of the object in the list.
+	 */
 	public void add(E object, int index) {
 		ObjectNode<E> prev, next;
 		if (index < size() && index > 0) {
@@ -52,6 +69,10 @@ public class DoublyLinkedList<E> {
 		}
 	}
 
+	/**
+	 * Adds an object at the first position in the list.
+	 * @param object the object to be added.
+	 */
 	public void addFirst(E object) {
 		ObjectNode<E> objectNode = new ObjectNode<E>(object);
 		if (first != null) {
@@ -64,6 +85,10 @@ public class DoublyLinkedList<E> {
 		}
 	}
 
+	/**
+	 * Adds an object at the last position of the list.
+	 * @param object the object to be added.
+	 */
 	public void addLast(E object) {
 		ObjectNode<E> objectNode = new ObjectNode<E>(object);
 		if (last != null) {
@@ -76,6 +101,11 @@ public class DoublyLinkedList<E> {
 		}
 	}
 
+	/**
+	 * Removes and returns an object at a specified index in the list.
+	 * @param index the index of the object
+	 * @return the object.
+	 */
 	public ObjectNode<E> remove(int index) {
 		if (index > -1 && index < size()) {
 			ObjectNode<E> target = get(index);
@@ -99,6 +129,10 @@ public class DoublyLinkedList<E> {
 		}
 	}
 
+	/**
+	 * Removes and returns the first object of the list.
+	 * @return the first object.
+	 */
 	public ObjectNode<E> removeFirst() {
 		ObjectNode<E> target = first;
 		ObjectNode<E> next = first.getNext();
@@ -107,6 +141,10 @@ public class DoublyLinkedList<E> {
 		return target;
 	}
 
+	/**
+	 * Removes and returns the last object of the list.
+	 * @return the last object.
+	 */
 	public ObjectNode<E> removeLast() {
 		ObjectNode<E> target = last;
 		ObjectNode<E> prev = target.getPrevious();
@@ -115,14 +153,27 @@ public class DoublyLinkedList<E> {
 		return target;
 	}
 
+	/**
+	 * Returns the first object of the list.
+	 * @return the first object.
+	 */
 	public ObjectNode<E> getFirst() {
 		return first;
 	}
 
+	/**
+	 * Returns the last object of the list.
+	 * @return the last object.
+	 */
 	public ObjectNode<E> getLast() {
 		return last;
 	}
 
+	/**
+	 * Returns a String containing the data of all ObjectNodes in the list.
+	 * The string is generated using the objects toString-method.
+	 * @return string
+	 */
 	public String toString() {
 		String res = "";
 		if (first != null) {
