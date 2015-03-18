@@ -54,6 +54,8 @@ public class MainDLL {
 		System.out.println("Försök att hämta objekt med index -1: ");
 		list.get(-1);
 		System.out.println();
+		
+		System.out.println("Skriv ut listan baklänges: " + "\n" + list.toStringBackwards());
 	}
 	
 	public static void main(String[] args) {

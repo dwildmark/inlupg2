@@ -185,5 +185,17 @@ public class DoublyLinkedList<E> {
 		}
 		return res;
 	}
+	
+	public String toStringBackwards() {
+		String res = "";
+		if(last != null) {
+			ObjectNode<E> node = last;
+			while(node != null) {
+				res += "[ " + node.getData().toString() + " ]";
+				node = node.getPrevious();
+			}
+		}
+		return res;
+	}
 
 }
